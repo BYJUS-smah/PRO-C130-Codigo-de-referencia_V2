@@ -4,6 +4,7 @@ df = pd.read_csv("final.csv")
 #check number of rows and columns
 print(df.shape)
 
+# delete extra columns
 del df["hyperlink"]
 del df["temp_planet_date"]
 del df["temp_planet_mass"]
@@ -72,9 +73,9 @@ del df["rowupdate"]
 del df["pl_facility"]
 
 print(df.shape)
-
+#check headers
 print(list(df))
-
+#rename headers
 df = df.rename({
                 'pl_hostname': "solar_system_name", 
                 'pl_discmethod': "planet_discovery_method", 
@@ -88,6 +89,6 @@ df = df.rename({
             }, axis='columns')
  
 print(list(df))
-
+#save to csv file
 df.to_csv('main.csv')
 
