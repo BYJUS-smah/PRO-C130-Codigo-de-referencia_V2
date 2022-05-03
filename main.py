@@ -1,10 +1,10 @@
 import pandas as pd
-#read csv file
+# Leer el archivo csv.
 df = pd.read_csv("final.csv")
-#check number of rows and columns
+# Verificar el nombre de filas y columnas.
 print(df.shape)
 
-# delete extra columns
+# Eliminar las columnas extra.
 del df["hyperlink"]
 del df["temp_planet_date"]
 del df["temp_planet_mass"]
@@ -73,9 +73,9 @@ del df["rowupdate"]
 del df["pl_facility"]
 
 print(df.shape)
-#check headers
+# Verificar los encabezados.
 print(list(df))
-#rename headers
+# Renombrar los encabezados.
 df = df.rename({
                 'pl_hostname': "solar_system_name", 
                 'pl_discmethod': "planet_discovery_method", 
@@ -89,6 +89,6 @@ df = df.rename({
             }, axis='columns')
  
 print(list(df))
-#save to csv file
+# Guardar el archivo csv.
 df.to_csv('main.csv')
 
